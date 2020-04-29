@@ -140,9 +140,9 @@ io.on('connection', (socket) => {
   })
 })
 
-const appServer = http.listen(port, () => {
-  console.log('server is running on port', appServer.address().port);
-})
+// const appServer = http.listen(port, () => {
+//   console.log('server is running on port', appServer.address().port);
+// })
 
 // mongoose.connect(process.env.MONGODB_URI ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
 //   console.log('mongodb connected',err);
@@ -165,10 +165,10 @@ const options = {
 };
 mongoose.connect(uri, options).then(
   _ => {
-    console.info('Database connection stablished');
-    app.listen(port, function() {
-      debug(`listening on port ${port}`);
-    });
+    console.info('Database connection established');
+    // app.listen(port, function() {
+    //   debug(`listening on port ${port}`);
+    // });
   },
   error => {
     console.error('Database connection failed:', error);
