@@ -167,7 +167,7 @@ mongoose.connect(uri, options).then(
   _ => {
     console.info('Database connection established');
     http.listen(port, function() {
-      debug(`listening on port ${port}`);
+      console.log(`listening on port ${port}`);
     });
   },
   error => {
