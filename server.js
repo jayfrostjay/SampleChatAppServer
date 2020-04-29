@@ -22,7 +22,7 @@ const Login = mongoose.model('users', {
 })
 
 // //pass: U7sJsYp6cVQ217AW
-// const dbUrl = 'mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority'
+const dbUrl = 'mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority'
 // const defaultErrorResponse  = (err) => {
 //   return {
 //     status: false,
@@ -140,13 +140,13 @@ const Login = mongoose.model('users', {
 //   })
 // })
 
-// const appServer = http.listen(port, () => {
-//   console.log('server is running on port', appServer.address().port);
-// });
+const appServer = http.listen(port, () => {
+  console.log('server is running on port', appServer.address().port);
+});
 
 
-// mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
-//   console.log('mongodb connected',err);
-// })
+mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
+  console.log('mongodb connected',err);
+})
 
 // module.exports = app
