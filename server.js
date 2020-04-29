@@ -148,4 +148,5 @@ io.on('connection', (socket) => {
 //   console.log('mongodb connected',err);
 // })
 
-mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
+var mongodbUri = process.env.MONGODB_URI || "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
+mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true})
