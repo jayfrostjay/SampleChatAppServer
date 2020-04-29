@@ -4,9 +4,12 @@
   "description": "demo chat app",
   "main": "index.js",
   "engines": {
-    "node" : "12.16.1"
+    "node": "12.16.1"
   },
   "scripts": {
+    "dev" : "node server",
+    "start": "serve -s build",
+    "build": "GENERATE_SOURCEMAP=false node server",
     "test": "jasmine"
   },
   "author": "",
@@ -15,6 +18,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "mongoose": "^5.7.5",
+    "serve": "^11.3.0",
     "socket.io": "^2.1.1",
     "uuid": "^7.0.3"
   },
