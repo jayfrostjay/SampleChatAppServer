@@ -140,13 +140,13 @@ io.on('connection', (socket) => {
   })
 })
 
-app.listen(port, () => {
+// app.listen(port, () => {
   // console.log('server is running on port', appServer.address().port);
-})
+// })
 
 // mongoose.connect(process.env.MONGODB_URI ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
 //   console.log('mongodb connected',err);
 // })
 
 var mongodbUri = process.env.MONGODB_URI || "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
-// mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true})
