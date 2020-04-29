@@ -22,7 +22,7 @@ const Login = mongoose.model('users', {
 })
 
 // //pass: U7sJsYp6cVQ217AW
-const dbUrl = "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
+// const dbUrl = "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
 const defaultErrorResponse  = (err) => {
   return {
     status: false,
@@ -144,6 +144,6 @@ io.on('connection', (socket) => {
 //   console.log('server is running on port', appServer.address().port);
 // });
 
-// mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
-//   console.log('mongodb connected',err);
-// })
+mongoose.connect(process.env.MONGODB_URI ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
+  console.log('mongodb connected',err);
+})
