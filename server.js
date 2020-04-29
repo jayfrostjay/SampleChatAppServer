@@ -148,3 +148,5 @@ const appServer = http.listen(port, () => {
 mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
   console.log('mongodb connected',err);
 })
+
+module.exports = app
