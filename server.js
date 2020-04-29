@@ -144,9 +144,6 @@ const appServer = http.listen(port, () => {
   console.log('server is running on port', appServer.address().port);
 });
 
-
-mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
-  console.log('mongodb connected',err);
-})
-
-// module.exports = app
+// mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
+//   console.log('mongodb connected',err);
+// })
