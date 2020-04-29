@@ -145,8 +145,6 @@ const appServer = http.listen(port, () => {
 });
 
 
-mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
+mongoose.connect(dbUrl ,{} ,(err) => {
   console.log('mongodb connected',err);
 })
-
-module.exports = app
