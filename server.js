@@ -140,10 +140,11 @@ io.on('connection', (socket) => {
   })
 })
 
-mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
-  console.log('mongodb connected',err);
-})
-
 const appServer = http.listen(port, () => {
   console.log('server is running on port', appServer.address().port);
 });
+
+
+mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
+  console.log('mongodb connected',err);
+})
