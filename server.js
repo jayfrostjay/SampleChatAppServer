@@ -148,7 +148,30 @@ const appServer = http.listen(port, () => {
 //   console.log('mongodb connected',err);
 // })
 
-var mongodbUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
-mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
-  console.log('mongodb connected');
-})
+// var mongodbUri = process.env.MONGOLAB_URI || process.env.MONGOHQ_URL || "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
+// mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true}, () => {
+//   console.log('mongodb connected');
+// })
+
+const uri = `mongodb+srv://${process.env.DB_HOST}`;
+const options = {
+  user: process.env.DB_USER,
+  pass: process.env.DB_PASS,
+  dbName: process.env.DB_NAME,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+};
+mongoose.connect(uri, options).then(
+  _ => {
+    console.info('Database connection stablished');
+    app.listen(port, function() {
+      debug(`listening on port ${port}`);
+    });
+  },
+  error => {
+    console.error('Database connection failed:', error);
+    throw new Error('Could not connect to the database');
+  }
+);
