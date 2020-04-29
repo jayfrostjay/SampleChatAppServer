@@ -3,8 +3,7 @@ const bodyParser = require('body-parser')
 const app = express();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
-const mongoose = require('mongoose');
-const port = process.env.port || 3000
+const mongoose = require('mongoose')
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
@@ -153,6 +152,7 @@ io.on('connection', (socket) => {
 //   console.log('mongodb connected');
 // })
 
+const port = process.env.port || 3000
 const uri = `mongodb+srv://${process.env.DB_HOST}`;
 const options = {
   user: process.env.DB_USER,
@@ -166,9 +166,9 @@ const options = {
 mongoose.connect(uri, options).then(
   _ => {
     console.info('Database connection established');
-    // app.listen(port, function() {
-    //   debug(`listening on port ${port}`);
-    // });
+    http.listen(port, function() {
+      debug(`listening on port ${port}`);
+    });
   },
   error => {
     console.error('Database connection failed:', error);
