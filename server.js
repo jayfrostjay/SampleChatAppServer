@@ -149,4 +149,4 @@ const appServer = http.listen(port, () => {
 // })
 
 var mongodbUri = process.env.MONGODB_URI || "mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority"
-mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true})
+// mongoose.connect(mongodbUri, {useNewUrlParser: true, useUnifiedTopology: true})
