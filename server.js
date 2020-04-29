@@ -10,10 +10,6 @@ app.use(express.static(__dirname));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}))
 
-const server = express()
-  .use((req, res) => res.sendFile(INDEX, { root: __dirname }))
-  .listen(PORT, () => console.log(`Listening on ${PORT}`));
-
 // const Message = mongoose.model('messages',{
 //   name : String,
 //   message : String,
@@ -26,7 +22,7 @@ const server = express()
 // })
 
 // //pass: U7sJsYp6cVQ217AW
-// const dbUrl = 'mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority'
+const dbUrl = 'mongodb+srv://jayson:U7sJsYp6cVQ217AW@chatapp-hop1k.mongodb.net/chatapp?retryWrites=true&w=majority'
 // const defaultErrorResponse  = (err) => {
 //   return {
 //     status: false,
