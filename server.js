@@ -148,4 +148,4 @@ io.on('connection', (socket) => {
 //   console.log('mongodb connected',err);
 // })
 
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true})
