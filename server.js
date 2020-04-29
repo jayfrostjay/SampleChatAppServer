@@ -130,9 +130,11 @@ io.on('connection', () =>{
 })
 
 mongoose.connect(dbUrl ,{useMongoClient : true} ,(err) => {
-  console.log('mongodb connected',err);
+  // console.log('mongodb connected',err);
 })
 
-const server = http.listen(port, () => {
-  console.log('server is running on port', server.address().port);
-});
+// const server = http.listen(port, () => {
+  // console.log('server is running on port', server.address().port);
+// });
+
+setInterval(() => io.emit('time', new Date().toTimeString()), 1000);
