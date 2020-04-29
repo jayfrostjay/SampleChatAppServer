@@ -141,10 +141,12 @@ io.on('connection', (socket) => {
 })
 
 const appServer = http.listen(port, () => {
-  // console.log('server is running on port', appServer.address().port);
+  console.log('server is running on port', appServer.address().port);
 });
 
 
 mongoose.connect(dbUrl ,{useNewUrlParser: true, useUnifiedTopology: true} ,(err) => {
-  // console.log('mongodb connected',err);
+  console.log('mongodb connected',err);
 })
+
+module.exports = app
