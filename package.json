@@ -7,9 +7,9 @@
     "node": "12.16.1"
   },
   "scripts": {
-    "dev": "node server.js",
+    "dev" : "node server",
     "start": "serve -s build",
-    "build": "GENERATE_SOURCEMAP=false node server.js",
+    "build": "node server",
     "test": "jasmine"
   },
   "author": "",
