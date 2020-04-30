@@ -148,7 +148,7 @@ io.on('connection', (socket) => {
   })
 }) 
 
-app.listen(PORT, console.log(`Server is starting at ${PORT}`));
+http.listen(PORT, console.log(`Server is starting at ${PORT}`));
 
 // const appServer = http.listen(port, () => {
 //   console.log('server is running on port', appServer.address().port);
